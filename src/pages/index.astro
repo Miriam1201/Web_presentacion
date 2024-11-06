@@ -1,0 +1,53 @@
+---
+// Página principal
+
+import NavBar from "../components/NavBar.astro";
+import HeroSection from "../components/Hero.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import BuildCard from "../components/BuildCard.astro";
+import CommunitySection from "../components/CommunitySection.astro";
+import CallToActionButtons from "../components/CallToActionButtons.astro";
+import DownloadSection from "../components/DownloadSection.astro";
+
+const builds = [
+  {
+    name: "Diluc",
+    image: "/images/builds/build_diluc.jpg",
+    description: "Mejor build para maximizar el daño de Diluc.",
+    weapon: "Beacon of the Reed Sea",
+    set: "Crimson Witch of Flames",
+    background: "/images/builds/background/pyro.png", 
+  },
+  {
+    name: "Raiden Shogun",
+    image: "/images/builds/build_shogun.jpg",
+    description:
+      "Mejor build para maximizar la recarga de energía y el daño explosivo de Raiden Shogun.",
+    weapon: "Engulfing Lightning",
+    set: "Emblem of Severed Fate",
+    background: "/images/builds/background/electro.png", 
+  },
+];
+---
+
+<Layout title="Genshin Impact Guide">
+  <NavBar />
+
+  <HeroSection />
+  <CallToActionButtons />
+
+  <DownloadSection />
+
+  <section id="explorar" class="p-8 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">
+      Explora Builds Populares
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      {builds.map((build) => <BuildCard {...build} />)}
+    </div>
+  </section>
+
+  <CommunitySection />
+  <Footer />
+</Layout>

@@ -1,0 +1,80 @@
+---
+// CommunitySection.astro
+const comments = [
+  {
+    username: "Sie7e",
+    avatar: "/images/avatar/avatar1.png",
+    date: "12/10",
+    text: "¿Cuál es la mejor combinación de artefactos para Raiden Shogun?",
+    commentId: 1,
+    reactions: 3,
+  },
+  {
+    username: "Nicol34",
+    avatar: "/images/avatar/avatar2.png",
+    date: "10/10",
+    text: "Recomiendo el set de Emblema del Destino por el bono de Energía.",
+    commentId: 2,
+    reactions: 5,
+  },
+];
+---
+
+<section id="comunidad" class="p-8">
+  <h2 class="text-3xl font-bold text-center text-blue-600 mb-6">
+    Discute con la Comunidad
+  </h2>
+  <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+    <form class="flex space-x-4 items-start">
+      <textarea
+        class="text-black w-full h-24 border border-gray-300 rounded-lg p-4 focus:outline-none focus:ring-2 focus:ring-blue-600"
+        placeholder="Comparte tu idea o pregunta sobre las builds aquí..."
+      ></textarea>
+      <button
+        type="submit"
+        class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-all"
+        >Publicar</button
+      >
+    </form>
+  </div>
+  <div class="space-y-6">
+    {
+      comments.map((comment) => (
+        <div class="flex space-x-4 items-start p-6 bg-gray-100 rounded-lg shadow-md">
+          <img
+            src={comment.avatar}
+            alt={`${comment.username} avatar`}
+            class="w-14 h-14 rounded-full"
+          />
+          <div class="flex-1">
+            <div class="flex items-center space-x-2 mb-2">
+              <h4 class="font-bold text-lg text-blue-600">
+                {comment.username}
+              </h4>
+              <span class="text-sm text-gray-500">
+                Comentario {comment.commentId}
+              </span>
+            </div>
+            <p class="bg-white text-gray-800 rounded-lg p-4 border border-gray-200">
+              {comment.text}
+            </p>
+            <div class="flex justify-between items-center mt-2 text-gray-500 text-sm">
+              <span>{comment.date}</span>
+              <div class="flex space-x-4">
+                <button class="flex items-center space-x-1 hover:text-blue-600">
+                  <span>Responder</span>
+                  <i class="fas fa-reply" />
+                </button>
+                <button class="flex items-center space-x-1 hover:text-blue-600">
+                  <i class="fas fa-thumbs-up" />
+                  <span>{comment.reactions}</span>
+                </button>
+                <i class="fas fa-ellipsis-h hover:text-blue-600 cursor-pointer" />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

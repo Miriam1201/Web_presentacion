@@ -1,0 +1,62 @@
+---
+// DownloadSection.astro
+---
+
+<section class="bg-gray-100 py-16 px-8">
+  <div class="flex flex-wrap items-start justify-between container mx-auto">
+    <!-- Sección de Texto y Descarga -->
+    <div class="max-w-md space-y-6 text-left">
+      <h2 class="text-3xl font-bold text-blue-800">
+        Lleva Genshin Impact a Todos Lados
+      </h2>
+      <p class="text-lg text-gray-700">
+        Descarga la aplicación para acceder a las mejores builds, consejos, y
+        guías estés donde estés.
+      </p>
+      <div class="flex space-x-4">
+        <a href="https://apps.apple.com" target="_blank" class="inline-block">
+          <img
+            src="/images/app_store.png"
+            alt="Descargar en App Store"
+            class="h-12"
+          />
+        </a>
+        <a href="https://play.google.com" target="_blank" class="inline-block">
+          <img
+            src="/images/google_play.png"
+            alt="Descargar en Google Play"
+            class="h-12"
+          />
+        </a>
+      </div>
+    </div>
+
+    <!-- Código QR para Descarga -->
+    <div class="w-full md:w-1/3 mt-8 md:mt-0 text-center relative">
+      <div class="bg-white p-6 rounded-lg shadow-lg inline-block">
+        <img
+          src="/images/qr_code.png"
+          alt="Código QR para Descargar la App"
+          class="h-40 w-40 mx-auto"
+        />
+        <p class="mt-4 text-blue-600 font-semibold">
+          Escanea el código para descargar
+        </p>
+      </div>
+
+      <!-- Imagen Adicional Izquierda -->
+      <img
+        src="/images/venti.png"
+        alt="Imagen Adicional 1"
+        class="absolute -left-96 bottom-0 h-40 w-40"
+      />
+
+      <!-- Imagen Adicional Derecha -->
+      <img
+        src="/images/zhongli.png"
+        alt="Imagen Adicional 2"
+        class="absolute -right-12 -bottom-16 h-40 w-40"
+      />
+    </div>
+  </div>
+</section>
