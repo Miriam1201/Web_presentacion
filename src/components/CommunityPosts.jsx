@@ -1,21 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-// Definimos el tipo Post (como una referencia, no como un alias directamente)
-const defaultPost = {
-    id: 0,
-    username: "",
-    email: "",
-    profile_image: "",
-    date: "",
-    game: "",
-    content: "",
-    images: [],
-    tags: [],
-    likes: 0,
-    comments: 0,
-    shares: 0,
-};
-
 export default function CommunityPosts() {
     const [posts, setPosts] = useState([]);
 
@@ -27,7 +11,25 @@ export default function CommunityPosts() {
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    setPosts(data);
+                    // Asegúrate de decodificar las imágenes correctamente aquí
+                    const updatedPosts = data.map(post => {
+                        let imagesArray = [];
+                        if (post.images && typeof post.images === "string") {
+                            try {
+                                // Intentar parsear las imágenes en un array JSON
+                                imagesArray = JSON.parse(post.images);
+                                // Reemplazar cualquier barra invertida por barras normales
+                                imagesArray = imagesArray.map(image => image.replace(/\\/g, '/'));
+                            } catch (error) {
+                                console.error("Error al parsear las imágenes:", error);
+                            }
+                        }
+                        return {
+                            ...post,
+                            images: imagesArray,
+                        };
+                    });
+                    setPosts(updatedPosts);
                 } else {
                     console.error("Error al obtener las publicaciones");
                 }
@@ -72,8 +74,24 @@ export default function CommunityPosts() {
                             {post.images.map((img, imgIndex) => (
                                 <img
                                     key={imgIndex}
-                                    src={img}
+                                    src={img.startsWith("/storage/") || img.startsWith("/images/")
+                                        ? `http://127.0.0.1:8000${img}`
+                                        : img}
                                     alt={`Imagen ${imgIndex + 1}`}
+                                    className="rounded-lg"
+                                />
+                            ))}
+                        </div>
+                    )}
+
+                    {/* Imágenes Comunitarias (Estáticas) */}
+                    {post.community_images && post.community_images.length > 0 && (
+                        <div className="grid grid-cols-2 gap-2 mb-4">
+                            {post.community_images.map((img, imgIndex) => (
+                                <img
+                                    key={imgIndex}
+                                    src={img}
+                                    alt={`Community Imagen ${imgIndex + 1}`}
                                     className="rounded-lg"
                                 />
                             ))}
