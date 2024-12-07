@@ -1,0 +1,350 @@
+---
+// Página principal
+
+import NavBar from "../components/NavBar.astro";
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Genshin Impact Guide">
+  <NavBar />
+
+  <div
+    class="flex flex-col gap-12 p-8 min-h-screen"
+    style="background-image: url('/images/fondo1.png'); background-size: cover; background-repeat: no-repeat;"
+  >
+    <div class="flex gap-12 items-center justify-center">
+      <div
+        class="rounded-lg overflow-hidden w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip1.png"
+          alt="Example Image"
+          class="w-full h-auto"
+        />
+      </div>
+
+      <div
+        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+      >
+        <div>
+          <h2 class="text-2xl font-bold text-center mb-4 text-black">
+            DPS y reacciones elementales
+          </h2>
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 1"
+            class="absolute top-0 left-0 w-24 h-24"
+          />
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 2"
+            class="absolute bottom-0 right-0 w-24 h-24"
+          />
+          <p class="text-black text-justify overflow-auto p-2">
+            El término <span class="font-bold text-orange-500"
+              >DPS (Damage per Second)</span
+            > no se refiere exclusivamente al daño físico, sino a cualquier personaje
+            que tenga buenas estadísticas de daño, ya sea <span
+              class="text-blue-500">físico</span
+            > o <span class="text-red-500">elemental</span>. Los atributos clave
+            para un DPS son <span class="font-bold text-purple-600"
+              >Ataque, Daño Crítico, Probabilidad Crítica</span
+            > y <span class="underline">Daño Elemental</span>. <br /><br /> Para
+            jugadores en nivel de mundo 3 o inferior, es recomendable centrarse en
+            personajes que causen más daño con las <span class="font-bold"
+              >armas</span
+            > y <span class="font-bold">artefactos</span> disponibles. Un buen equipo
+            debe incluir <span class="font-bold text-green-600"
+              >2 DPS, un Healer y un Buffer/Debuffer</span
+            > para maximizar los combos. Por ejemplo, <span class="font-bold"
+              >Xiangling</span
+            > equipada con <span class="italic">Perdición del Dragón</span> y el
+            conjunto de <span class="italic">Final del Gladiador</span>, junto a <span
+              class="font-bold text-blue-500">Bárbara</span
+            > como Healer, puede generar gran daño mediante <span
+              class="text-red-500">reacciones elementales</span
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-12 items-center justify-center">
+      <div
+        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+      >
+        <div>
+          <h2 class="text-2xl font-bold text-center mb-4 text-black">
+            Asciende armas, personajes y talentos antes de farmear artefactos
+          </h2>
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 1"
+            class="absolute top-0 left-0 w-24 h-24"
+          />
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 2"
+            class="absolute bottom-0 right-0 w-24 h-24"
+          />
+          <p class="text-black text-justify overflow-auto p-2 h-full">
+            Lo que menos te debe preocupar cuando inicies el juego es el <span
+              class="font-bold text-orange-500"
+              >farmeo de artefactos específicos</span
+            > ya que las <span class="underline"
+              >tasas de obtener uno de 4 estrellas o 5 estrellas</span
+            > con buenas estadísticas es baja en los dominios de <span
+              class="text-purple-600">Nivel de Mundo 4 o menos</span
+            >, solo será gratificante cuando seas <span class="font-bold"
+              >Nivel de Mundo 6</span
+            > debido a que los <span class="font-bold text-blue-500"
+              >dominios Nivel 90</span
+            > siempre te darán un <span class="text-red-500"
+              >artefacto de 5 estrellas</span
+            >, y si tienes suerte hasta <span class="font-bold">dos</span>.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="rounded-lg overflow-hidden w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip2.png"
+          alt="Example Image"
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+    <div class="flex gap-12 items-center justify-center">
+      <div
+        class="rounded-lg overflow-hidden w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip3.png"
+          alt="Example Image"
+          class="w-full h-auto"
+        />
+      </div>
+
+      <div
+        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+      >
+        <div>
+          <h2 class="text-2xl font-bold text-center mb-4 text-black">
+            No mejores artefactos a diestra y siniestra
+          </h2>
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 1"
+            class="absolute top-10 left-0 w-24 h-24"
+          />
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 2"
+            class="absolute bottom-10 right-0 w-24 h-24"
+          />
+          <p class="text-black text-justify overflow-auto p-2 ml-10">
+            <strong class="text-orange-500"
+              >No mejores artefactos a diestra y siniestra:</strong
+            >
+            Un error común de los <span class="font-bold text-orange-500"
+              >jugadores principiantes</span
+            >
+            es mejorar el primer <span class="font-bold text-purple-600"
+              >artefacto 4* o 5*</span
+            >
+            que consiguen sin considerar sus estadísticas, lo que los deja sin
+            <span class="font-bold text-green-600">moras</span> y <span
+              class="font-bold">recursos</span
+            >
+            para artefactos mejores. <br /><br />
+            Para saber si un artefacto es bueno:
+            <ul class="list-disc pl-5">
+              <li class="text-red-500">
+                <strong>Debe tener al menos 3 sub-estadísticas.</strong>
+              </li>
+              <li class="text-blue-500">
+                <strong>2 sub-estadísticas en porcentaje son ideales.</strong>
+              </li>
+              <li class="text-red-500">
+                <strong
+                  >Si tiene 2 sub-estadísticas planas (ATK+, DEF+, HP+), úsalo
+                  para subir otros artefactos.</strong
+                >
+              </li>
+              <li class="text-orange-500">
+                <strong
+                  >ATK, Prob CRIT, Daño CRIT, Maestría Elemental son excelentes
+                  para DPS.</strong
+                >
+              </li>
+              <li class="text-green-600">
+                <strong
+                  >Recarga de energía, Maestría Elemental, HP y DEF son
+                  perfectas para Buffer o Bruiser.</strong
+                >
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gap-12 items-center justify-center">
+      <div
+        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+      >
+        <div>
+          <h2 class="text-2xl font-bold text-center mb-4 text-black">
+            Recoge todo
+          </h2>
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 1"
+            class="absolute top-0 left-0 w-24 h-24"
+          />
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 2"
+            class="absolute bottom-0 right-0 w-24 h-24"
+          />
+          <p class="text-black text-justify overflow-auto p-2">
+            <strong class="text-orange-500"
+              >Recoge todo lo que encuentres:</strong
+            >
+            A medida que camines, notarás objetos brillando por todo el entorno.
+            Tienes un <span class="font-bold text-purple-600"
+              >límite de inventario de 10,000</span
+            >, así que simplemente recoge todo lo que puedas. <span
+              class="font-bold text-green-600"
+              >Flores, ingredientes de comida</span
+            >, y otros elementos que podrían parecer inútiles serán útiles más
+            adelante para <span class="text-red-500"
+              >crear diversos alimentos y potenciadores</span
+            > para tus personajes. <br /><br />
+
+            Las <span class="font-bold"
+              >flores y algunos materiales de ascensión</span
+            > solo reaparecen después de cierto número de <span
+              class="text-blue-500">días en la vida real</span
+            >, por lo que no querrás estar en una situación en la que tengas que
+            esperar tiempo real para mejorar a tus personajes. <strong
+              class="text-orange-500"
+              >Te alegrará no tener que buscar estos objetos más adelante.</strong
+            >
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="rounded-lg overflow-hidden w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip4.png"
+          alt="Example Image"
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+    <div class="flex gap-12 items-center justify-center">
+      <div
+        class="rounded-lg overflow-hidden w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip5.png"
+          alt="Example Image"
+          class="w-full h-auto"
+        />
+      </div>
+
+      <div
+        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+      >
+        <div>
+          <h2 class="text-2xl font-bold text-center mb-4 text-black">
+            Lleva un registro
+          </h2>
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 1"
+            class="absolute top-0 left-0 w-24 h-24"
+          />
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 2"
+            class="absolute bottom-0 right-0 w-24 h-24"
+          />
+          <p class="text-black text-justify overflow-auto p-2">
+            Si disfrutas <span class="font-bold text-orange-500"
+              >resolver acertijos, abrir cofres</span
+            >, y <span class="text-red-500">coleccionar objetos</span>, entonces
+            buenas noticias: Genshin es un gran juego para ti. Sin embargo, si
+            deseas <span class="font-bold">conseguir absolutamente todo</span>,
+            es importante llevar un registro de lo que has encontrado desde el
+            principio. <br /><br />
+
+            Te recomendamos usar <span class="font-bold text-blue-500"
+              >este mapa interactivo hecho por fans</span
+            > para hacerlo. <span class="italic"
+              >(Nos gusta porque los usuarios pueden dejar comentarios,
+              ayudándote a encontrar soluciones a acertijos o la ubicación de
+              objetos, en caso de que te sientas perdido).</span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-12 items-center justify-center">
+      <div
+        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+      >
+        <div>
+          <h2 class="text-2xl font-bold text-center mb-4 text-black">
+            El modo cooperativo es tu aliado
+          </h2>
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 1"
+            class="absolute top-0 left-0 w-24 h-24"
+          />
+          <img
+            src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
+            alt="Sticker 2"
+            class="absolute bottom-0 right-0 w-24 h-24"
+          />
+          <p class="text-black text-justify overflow-auto p-2">
+            Los <span class="font-bold text-orange-500">dominios</span> que necesitas
+            superar para obtener <span class="text-blue-500"
+              >artefactos y materiales de mejora</span
+            > pueden ser complicados al inicio, especialmente si no tienes tus personajes
+            bien construidos. Es un problema cíclico, ya que necesitas completar
+            estos dominios para mejorar a tus personajes. <br /><br />
+
+            No tengas miedo de presionar el botón de <span
+              class="font-bold text-green-600">cooperativo</span
+            >, el cual te emparejará con otros jugadores que pueden ayudarte a
+            superar estos dominios con facilidad.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="rounded-lg overflow-hidden w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip6.png"
+          alt="Example Image"
+          class="w-full h-auto"
+        />
+      </div>
+    </div>
+  </div>
+  <Footer />
+</Layout>

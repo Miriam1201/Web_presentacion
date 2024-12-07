@@ -29,11 +29,7 @@ const { name, image, description, weapon, set, background } = Astro.props;
           class="text-xl font-semibold text-blue-400 flex items-center space-x-2"
         >
           Arma
-          <img
-            src="/images/builds/arma.png"
-            alt="Arma"
-            class="h-8 w-8"
-          />
+          <img src="/images/builds/arma.png" alt="Arma" class="h-8 w-8" />
         </h4>
 
         <p class="text-gray-300 text-lg">{weapon}</p>
@@ -52,15 +48,5 @@ const { name, image, description, weapon, set, background } = Astro.props;
         <p class="text-gray-300 text-lg flex items-center space-x-2">{set}</p>
       </div>
     </div>
-    <button
-      class="gap-2 mt-6 w-full bg-blue-600 text-white py-3 text-lg font-semibold rounded-lg hover:bg-blue-700 transition-all flex items-center justify-center space-x-2"
-    >
-      Ver Detalles
-      <img
-        src="/images/builds/info.png"
-        alt="Información"
-        class="h-6 w-6"
-      />
-    </button>
   </div>
 </div>
