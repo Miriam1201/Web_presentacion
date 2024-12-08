@@ -6,20 +6,85 @@
   <div class="container mx-auto flex items-center justify-between">
     <!-- Logo Izquierdo -->
     <div class="flex items-center">
-      <img src="/images/logo.png" alt="Genshin Impact Logo" class="h-20 mr-4" />
-      <span class="text-sky-800 text-2xl font-semibold tracking-wide"
-        >Genshin Impact</span
+      <img
+        src="/images/logo.png"
+        alt="Genshin Impact Logo"
+        class="h-16 sm:h-20 mr-4"
+      />
+      <span
+        class="text-sky-800 text-lg sm:text-2xl font-semibold tracking-wide"
       >
+        Genshin Impact
+      </span>
     </div>
 
     <!-- Íconos de Navegación a la Derecha -->
-    <ul class="flex space-x-8 items-center">
+    <ul class="hidden sm:flex space-x-8 items-center">
       <li>
         <a
           href="/"
           class="flex flex-col items-center text-gray-700 hover:text-blue-500"
         >
-          <img src="/images/inicio.png" alt="Icon 1" class="h-14 mb-1" />
+          <img
+            src="/images/inicio.png"
+            alt="Icon 1"
+            class="h-10 sm:h-14 mb-1"
+          />
+          <span class="text-xs sm:text-sm">Inicio</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://amusing-miracle-producing.up.railway.app"
+          class="flex flex-col items-center text-gray-700 hover:text-blue-500"
+        >
+          <img
+            src="/images/comunidad.png"
+            alt="Comunidad"
+            class="h-10 sm:h-14 mb-1"
+          />
+          <span class="text-xs sm:text-sm">Comunidad</span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#"
+          class="flex flex-col items-center text-gray-700 hover:text-blue-500"
+        >
+          <img
+            src="/images/paimon.png"
+            alt="Icon 5"
+            class="h-10 sm:h-14 mb-1"
+          />
+          <span class="text-xs sm:text-sm">Descargar</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Botón de Menú Hamburguesa para Móvil -->
+    <button
+      id="menuToggle"
+      class="sm:hidden flex items-center px-3 py-2 border rounded text-gray-700 border-gray-500 hover:text-blue-500 hover:border-blue-500"
+    >
+      <svg
+        class="fill-current h-6 w-6"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        <path d="M0 3h20v2H0zM0 9h20v2H0zM0 15h20v2H0z"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Menú desplegable para dispositivos móviles -->
+  <div id="mobileMenu" class="hidden sm:hidden bg-gray-100 py-4">
+    <ul class="flex flex-col space-y-4 items-center">
+      <li>
+        <a
+          href="/"
+          class="flex flex-col items-center text-gray-700 hover:text-blue-500"
+        >
+          <img src="/images/inicio.png" alt="Icon 1" class="h-10 mb-1" />
           <span class="text-sm">Inicio</span>
         </a>
       </li>
@@ -28,7 +93,7 @@
           href="https://amusing-miracle-producing.up.railway.app"
           class="flex flex-col items-center text-gray-700 hover:text-blue-500"
         >
-          <img src="/images/comunidad.png" alt="Comunidad" class="h-14 mb-1" />
+          <img src="/images/comunidad.png" alt="Comunidad" class="h-10 mb-1" />
           <span class="text-sm">Comunidad</span>
         </a>
       </li>
@@ -37,10 +102,25 @@
           href="#"
           class="flex flex-col items-center text-gray-700 hover:text-blue-500"
         >
-          <img src="/images/paimon.png" alt="Icon 5" class="h-14 mb-1" />
+          <img src="/images/paimon.png" alt="Icon 5" class="h-10 mb-1" />
           <span class="text-sm">Descargar</span>
         </a>
       </li>
     </ul>
   </div>
 </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    } else {
+      console.error("Menu toggle or mobile menu element not found.");
+    }
+  });
+</script>

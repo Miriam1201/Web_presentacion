@@ -1,6 +1,4 @@
 ---
-// Página principal
-
 import NavBar from "../components/NavBar.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
@@ -13,35 +11,36 @@ import Layout from "../layouts/Layout.astro";
     class="flex flex-col gap-12 p-8 min-h-screen"
     style="background-image: url('/images/fondo1.png'); background-size: cover; background-repeat: no-repeat;"
   >
-    <div class="flex gap-12 items-center justify-center">
+    <!-- Fila 1 -->
+    <div class="flex flex-col lg:flex-row gap-8 items-center justify-center">
       <div
-        class="rounded-lg overflow-hidden w-[750px]"
+        class="rounded-lg overflow-hidden w-full lg:w-[750px]"
         style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
       >
         <img
           src="/images/tips/tip1.png"
-          alt="Example Image"
+          alt="DPS y Reacciones Elementales"
           class="w-full h-auto"
         />
       </div>
-
       <div
-        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+        class="w-full lg:w-[700px] lg:h-[450px] border-2 border-black p-6 pb-12 bg-white relative overflow-hidden rounded-lg flex flex-col items-center justify-center"
       >
         <div>
-          <h2 class="text-2xl font-bold text-center mb-4 text-black">
-            DPS y reacciones elementales
+          <h2 class="text-xl lg:text-2xl font-bold text-center mb-4 text-black">
+            DPS y Reacciones Elementales
           </h2>
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 1"
-            class="absolute top-0 left-0 w-24 h-24"
+            class="absolute top-[-2px] left-2 w-12 lg:w-24 hidden sm:block"
           />
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 2"
-            class="absolute bottom-0 right-0 w-24 h-24"
+            class="absolute bottom-[-2px] right-2 w-12 lg:w-24 hidden sm:block"
           />
+
           <p class="text-black text-justify overflow-auto p-2">
             El término <span class="font-bold text-orange-500"
               >DPS (Damage per Second)</span
@@ -70,23 +69,37 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
-    <div class="flex gap-12 items-center justify-center">
+
+    <!-- Fila 2 -->
+    <div
+      class="flex flex-col lg:flex-row-reverse gap-8 items-center justify-center"
+    >
       <div
-        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+        class="rounded-lg overflow-hidden w-full lg:w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip2.png"
+          alt="Asciende Armas y Talentos"
+          class="w-full h-auto"
+        />
+      </div>
+      <div
+        class="w-full lg:w-[700px] lg:h-[450px] border-2 border-black p-6 pb-12 bg-white relative overflow-hidden rounded-lg flex flex-col items-center justify-center"
       >
         <div>
-          <h2 class="text-2xl font-bold text-center mb-4 text-black">
-            Asciende armas, personajes y talentos antes de farmear artefactos
+          <h2 class="text-xl lg:text-2xl font-bold text-center mb-4 text-black">
+            Asciende Armas, Personajes y Talentos Antes de Farmear Artefactos
           </h2>
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 1"
-            class="absolute top-0 left-0 w-24 h-24"
+            class="absolute top-[-2px] left-2 w-12 lg:w-24 hidden sm:block"
           />
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 2"
-            class="absolute bottom-0 right-0 w-24 h-24"
+            class="absolute bottom-[-2px] right-2 w-12 lg:w-24 hidden sm:block"
           />
           <p class="text-black text-justify overflow-auto p-2 h-full">
             Lo que menos te debe preocupar cuando inicies el juego es el <span
@@ -106,46 +119,36 @@ import Layout from "../layouts/Layout.astro";
           </p>
         </div>
       </div>
-
-      <div
-        class="rounded-lg overflow-hidden w-[750px]"
-        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
-      >
-        <img
-          src="/images/tips/tip2.png"
-          alt="Example Image"
-          class="w-full h-auto"
-        />
-      </div>
     </div>
-    <div class="flex gap-12 items-center justify-center">
+
+    <!-- Fila 3 -->
+    <div class="flex flex-col lg:flex-row gap-8 items-center justify-center">
       <div
-        class="rounded-lg overflow-hidden w-[750px]"
+        class="rounded-lg overflow-hidden w-full lg:w-[750px]"
         style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
       >
         <img
           src="/images/tips/tip3.png"
-          alt="Example Image"
+          alt="No Mejores Artefactos Sin Pensar"
           class="w-full h-auto"
         />
       </div>
-
       <div
-        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+        class="w-full lg:w-[700px] lg:h-[450px] border-2 border-black p-6 pb-12 bg-white relative overflow-hidden rounded-lg flex flex-col items-center justify-center"
       >
         <div>
-          <h2 class="text-2xl font-bold text-center mb-4 text-black">
-            No mejores artefactos a diestra y siniestra
+          <h2 class="text-xl lg:text-2xl font-bold text-center mb-4 text-black">
+            No Mejores Artefactos Sin Pensar
           </h2>
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 1"
-            class="absolute top-10 left-0 w-24 h-24"
+            class="absolute top-[-2px] left-2 w-12 lg:w-24 hidden sm:block"
           />
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 2"
-            class="absolute bottom-10 right-0 w-24 h-24"
+            class="absolute bottom-[-2px] right-2 w-12 lg:w-24 hidden sm:block"
           />
           <p class="text-black text-justify overflow-auto p-2 ml-10">
             <strong class="text-orange-500"
@@ -194,23 +197,36 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
 
-    <div class="flex gap-12 items-center justify-center">
+    <!-- Fila 4 -->
+    <div
+      class="flex flex-col lg:flex-row-reverse gap-8 items-center justify-center"
+    >
       <div
-        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+        class="rounded-lg overflow-hidden w-full lg:w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip4.png"
+          alt="Recoge Todo"
+          class="w-full h-auto"
+        />
+      </div>
+      <div
+        class="w-full lg:w-[700px] lg:h-[450px] border-2 border-black p-6 pb-12 bg-white relative overflow-hidden rounded-lg flex flex-col items-center justify-center"
       >
         <div>
-          <h2 class="text-2xl font-bold text-center mb-4 text-black">
-            Recoge todo
+          <h2 class="text-xl lg:text-2xl font-bold text-center mb-4 text-black">
+            Recoge Todo
           </h2>
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 1"
-            class="absolute top-0 left-0 w-24 h-24"
+            class="absolute top-[-2px] left-2 w-12 lg:w-24 hidden sm:block"
           />
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 2"
-            class="absolute bottom-0 right-0 w-24 h-24"
+            class="absolute bottom-[-2px] right-2 w-12 lg:w-24 hidden sm:block"
           />
           <p class="text-black text-justify overflow-auto p-2">
             <strong class="text-orange-500"
@@ -239,46 +255,36 @@ import Layout from "../layouts/Layout.astro";
           </p>
         </div>
       </div>
-
-      <div
-        class="rounded-lg overflow-hidden w-[750px]"
-        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
-      >
-        <img
-          src="/images/tips/tip4.png"
-          alt="Example Image"
-          class="w-full h-auto"
-        />
-      </div>
     </div>
-    <div class="flex gap-12 items-center justify-center">
+
+    <!-- Fila 5 -->
+    <div class="flex flex-col lg:flex-row gap-8 items-center justify-center">
       <div
-        class="rounded-lg overflow-hidden w-[750px]"
+        class="rounded-lg overflow-hidden w-full lg:w-[750px]"
         style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
       >
         <img
           src="/images/tips/tip5.png"
-          alt="Example Image"
+          alt="Lleva un Registro"
           class="w-full h-auto"
         />
       </div>
-
       <div
-        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+        class="w-full lg:w-[700px] lg:h-[450px] border-2 border-black p-6 pb-12 bg-white relative overflow-hidden rounded-lg flex flex-col items-center justify-center"
       >
         <div>
-          <h2 class="text-2xl font-bold text-center mb-4 text-black">
-            Lleva un registro
+          <h2 class="text-xl lg:text-2xl font-bold text-center mb-4 text-black">
+            Lleva un Registro
           </h2>
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 1"
-            class="absolute top-0 left-0 w-24 h-24"
+            class="absolute top-[-2px] left-2 w-12 lg:w-24 hidden sm:block"
           />
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 2"
-            class="absolute bottom-0 right-0 w-24 h-24"
+            class="absolute bottom-[-2px] right-2 w-12 lg:w-24 hidden sm:block"
           />
           <p class="text-black text-justify overflow-auto p-2">
             Si disfrutas <span class="font-bold text-orange-500"
@@ -300,23 +306,37 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </div>
-    <div class="flex gap-12 items-center justify-center">
+
+    <!-- Fila 6 -->
+    <div
+      class="flex flex-col lg:flex-row-reverse gap-8 items-center justify-center"
+    >
       <div
-        class="w-[700px] h-[400px] border-2 border-black p-10 bg-white relative overflow-hidden rounded-lg flex items-center justify-center"
+        class="rounded-lg overflow-hidden w-full lg:w-[750px]"
+        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
+      >
+        <img
+          src="/images/tips/tip6.png"
+          alt="Modo Cooperativo"
+          class="w-full h-auto"
+        />
+      </div>
+      <div
+        class="w-full lg:w-[700px] lg:h-[450px] border-2 border-black p-6 pb-12 bg-white relative overflow-hidden rounded-lg flex flex-col items-center justify-center"
       >
         <div>
-          <h2 class="text-2xl font-bold text-center mb-4 text-black">
-            El modo cooperativo es tu aliado
+          <h2 class="text-xl lg:text-2xl font-bold text-center mb-4 text-black">
+            El Modo Cooperativo Es Tu Aliado
           </h2>
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 1"
-            class="absolute top-0 left-0 w-24 h-24"
+            class="absolute top-[-2px] left-2 w-12 lg:w-24 hidden sm:block"
           />
           <img
             src={`/images/stickers/emoji${Math.floor(Math.random() * 22) + 1}.png`}
             alt="Sticker 2"
-            class="absolute bottom-0 right-0 w-24 h-24"
+            class="absolute bottom-[-2px] right-2 w-12 lg:w-24 hidden sm:block"
           />
           <p class="text-black text-justify overflow-auto p-2">
             Los <span class="font-bold text-orange-500">dominios</span> que necesitas
@@ -333,18 +353,8 @@ import Layout from "../layouts/Layout.astro";
           </p>
         </div>
       </div>
-
-      <div
-        class="rounded-lg overflow-hidden w-[750px]"
-        style="box-shadow: 0 10px 30px rgba(33, 9, 144, 0.8);"
-      >
-        <img
-          src="/images/tips/tip6.png"
-          alt="Example Image"
-          class="w-full h-auto"
-        />
-      </div>
     </div>
   </div>
+
   <Footer />
 </Layout>

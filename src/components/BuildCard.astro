@@ -1,51 +1,55 @@
 ---
-// BuildCard.astro
 const { name, image, description, weapon, set, background } = Astro.props;
 ---
 
 <div
-  class="rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full max-w-4xl text-white flex"
+  class="rounded-lg shadow-lg hover:shadow-xl transition-shadow w-full max-w-4xl text-white flex flex-col md:flex-row"
   style={`background-image: url(${background}); background-size: cover; background-position: center;`}
 >
-  <!-- Imagen del Personaje a la Izquierda -->
-  <div class="w-3/4 flex items-center">
+  <!-- Imagen del Personaje -->
+  <div class="w-full md:w-3/4 flex items-center">
     <img
       src={image}
       alt={`Build ${name}`}
-      class="w-full h-full rounded-l-lg object-cover"
+      class="w-full h-48 md:h-full rounded-t-lg md:rounded-l-lg object-cover"
     />
   </div>
 
-  <!-- Información del Personaje a la Derecha -->
+  <!-- Información del Personaje -->
   <div
-    class="w-1/2 p-6 flex flex-col justify-between rounded-r-lg bg-opacity-70"
+    class="w-full md:w-1/2 p-6 flex flex-col justify-between rounded-b-lg md:rounded-r-lg bg-opacity-70"
     style="background-color: rgba(26, 26, 26, 0.9);"
   >
     <div>
-      <h3 class="text-4xl font-bold text-blue-400">{name}</h3>
-      <p class="text-gray-300 mt-4 text-lg">{description}</p>
+      <h3 class="text-2xl md:text-4xl font-bold text-blue-400">{name}</h3>
+      <p class="text-gray-300 mt-4 text-base md:text-lg">{description}</p>
       <div class="mt-6">
         <h4
-          class="text-xl font-semibold text-blue-400 flex items-center space-x-2"
+          class="text-lg md:text-xl font-semibold text-blue-400 flex items-center space-x-2"
         >
           Arma
-          <img src="/images/builds/arma.png" alt="Arma" class="h-8 w-8" />
+          <img
+            src="/images/builds/arma.png"
+            alt="Arma"
+            class="h-6 md:h-8 w-6 md:w-8"
+          />
         </h4>
-
-        <p class="text-gray-300 text-lg">{weapon}</p>
+        <p class="text-gray-300 text-sm md:text-lg">{weapon}</p>
       </div>
       <div class="mt-4">
         <h4
-          class="text-xl font-semibold text-blue-400 flex items-center space-x-2"
+          class="text-lg md:text-xl font-semibold text-blue-400 flex items-center space-x-2"
         >
           Artefacto
           <img
             src="/images/builds/artefacto.png"
             alt="Artefacto"
-            class="h-8 w-8"
+            class="h-6 md:h-8 w-6 md:w-8"
           />
         </h4>
-        <p class="text-gray-300 text-lg flex items-center space-x-2">{set}</p>
+        <p class="text-gray-300 text-sm md:text-lg flex items-center space-x-2">
+          {set}
+        </p>
       </div>
     </div>
   </div>

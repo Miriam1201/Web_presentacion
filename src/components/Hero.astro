@@ -3,30 +3,36 @@
 ---
 
 <section
-  class="h-[90vh] bg-cover bg-center relative"
+  class="h-screen bg-cover bg-center relative"
   style="background-image: url('/images/fondo.jpg');"
 >
   <div class="absolute inset-0 bg-black opacity-30"></div>
 
-  <div class="absolute bottom-32 left-64 text-white text-center">
-    <h1 class="text-6xl font-bold tracking-wide">
+  <div
+    class="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-white text-center px-4 md:px-0 md:bottom-32 md:left-64 md:transform-none"
+  >
+    <h1 class="text-3xl md:text-6xl font-bold tracking-wide">
       Genshin Impact Builds & Guías
     </h1>
-    <p class="text-lg mt-4">
+    <p class="text-base md:text-lg mt-4">
       Descubre las mejores builds, comparte tus ideas y conecta con la
       comunidad.
     </p>
     <a
       href="https://amusing-miracle-producing.up.railway.app"
-      class="gap-2 mt-6 w-full bg-blue-600 hover:bg-blue-500 text-white py-3 text-lg font-semibold rounded-lg transition-all flex items-center justify-center space-x-2"
+      class="mt-6 w-full bg-blue-600 hover:bg-blue-500 text-white py-3 text-base md:text-lg font-semibold rounded-lg transition-all flex items-center justify-center gap-2"
     >
       <img
         src="/images/grito.png"
         alt="Información"
-        class="h-6 w-6 transform -scale-x-100"
+        class="h-5 w-5 md:h-6 md:w-6 transform -scale-x-100"
       />
       Únete a la Comunidad
-      <img src="/images/grito.png" alt="Información" class="h-6 w-6" />
+      <img
+        src="/images/grito.png"
+        alt="Información"
+        class="h-5 w-5 md:h-6 md:w-6"
+      />
     </a>
   </div>
 </section>
