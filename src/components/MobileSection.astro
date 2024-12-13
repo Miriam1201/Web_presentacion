@@ -224,7 +224,9 @@ import "photoswipe/style.css";
 <script>
   import Swiper from "swiper";
   import { Navigation } from "swiper/modules";
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
 
+  // Configuración de Swiper
   const swiper = new Swiper(".swiper", {
     modules: [Navigation],
     loop: true,
@@ -240,16 +242,30 @@ import "photoswipe/style.css";
     },
   });
 
-  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  // Configuración de PhotoSwipe
   const lightbox = new PhotoSwipeLightbox({
     gallery: "#my-slider",
     children: "a",
     pswpModule: () => import("photoswipe"),
   });
+
+  // Ajuste dinámico de imágenes en el modal de PhotoSwipe
+  lightbox.on("contentResize", (e) => {
+    const img = e.content.element;
+    if (img) {
+      img.style.width = "auto";
+      img.style.height = "auto";
+      img.style.objectFit = "contain";
+      img.style.margin = "auto";
+      img.style.display = "block";
+    }
+  });
+
   lightbox.init();
 </script>
 
 <style>
+  /* Swiper Styles */
   .swiper {
     position: relative;
     overflow: hidden;
@@ -293,5 +309,32 @@ import "photoswipe/style.css";
     .swiper-button-prev {
       display: none;
     }
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* PhotoSwipe Styles */
+  .pswp__img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+  }
+
+  .pswp__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pswp__zoom-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
